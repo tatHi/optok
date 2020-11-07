@@ -87,6 +87,9 @@ mlm.load('test_dir/mlm.model')
 tknzr = tokenizer.Tokenizer(mlm)
 
 # tokenize
+print('Tokenization')
+print('-'*30)
 for line in text:
-    print(tknzr.encode_as_pieces(line))
-    print(tknzr.encode_as_ids(line))
+    print('pieces:', tknzr.encode_as_pieces(line))
+    print('ids   :', tknzr.encode_as_ids(line))
+    print('-'*30)

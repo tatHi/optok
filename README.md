@@ -8,6 +8,8 @@ In short, we call our system "OpTok: Optimizing Tokenization".
 - numba
 
 ## Setup
+Install [multigram](https://github.com/tatHi/multigram) and prepare OpTok repository.
+
 ```
 $ mkdir optok_environment
 $ cd optok_environment
@@ -18,6 +20,8 @@ $ pip install --editable .
 ```
 
 ## Run exapmle
+`/src/run_example.py` describes example codes of training OpTok, dumping models, and tokenize text with a trained language model.
+
 ```
 $ cd optok/src
 $ mkdir test_dir
@@ -36,5 +40,17 @@ tensor(0.7169, grad_fn=<NllLossBackward>)
 ------------------------------
 Language model loss
 tensor(0.1875, grad_fn=<DivBackward0>)
+------------------------------
+>>> DUMP LEARNED LM AS MLM
+Tokenization
+------------------------------
+pieces: ['a', 'b', 'cd', 'e', 'f', 'g']
+ids   : [1, 2, 4, 6, 7, 8]
+------------------------------
+pieces: ['cd', 'a', 'b', 'c', 'cd']
+ids   : [4, 1, 2, 3, 4]
+------------------------------
+pieces: ['a', 'b', 'b', 'cd', 'e']
+ids   : [1, 2, 2, 4, 6]
 ------------------------------
 ```

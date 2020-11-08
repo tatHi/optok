@@ -4,8 +4,9 @@ In short, we call our system "OpTok: Optimizing Tokenization".
 
 ## Requirements
 - [multigram](https://github.com/tatHi/multigram)
-- PyTorch
-- numba
+- transformers==2.8.0
+- numpy==1.18.0
+- torch==1.6.0+cu101
 
 ## Setup
 Install [multigram](https://github.com/tatHi/multigram) and prepare OpTok repository.

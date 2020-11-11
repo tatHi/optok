@@ -3,8 +3,6 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.nn.utils.rnn as rnn
 
-import bertEncoder
-import bilstmEncoder
 
 import sys
 sys.path.append('../../optok/src')
@@ -36,11 +34,14 @@ class Classifier(nn.Module):
 
         # prepare encoder
         if encoderType=='bilstm':
+            import bilstmEncoder
             encoder = bilstmEncoder.BiLSTMEncoder(embedSize, hidSize)
         elif encoderType=='bert':
+            import bertEncoder
             encoder = bertEncoder.BertEncoder()
         else:
-            print('encoer')
+            print('encoer should be bilstm or bert')
+            exit()
         
         self.ot = optok.OpTok(mlm, 
                               lmEmbed=self.lmEmbed,

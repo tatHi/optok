@@ -1,12 +1,12 @@
 # Optimizing Word Segmentation for Downstream Task
-Author's implementation of "Optimizing Word Segmentation for Downstream Task".
+Author's implementation of "[Optimizing Word Segmentation for Downstream Task](https://www.aclweb.org/anthology/2020.findings-emnlp.120.pdf)".
 In short, we call our system "OpTok: Optimizing Tokenization".
 
 ## Requirements
 - [multigram](https://github.com/tatHi/multigram)
-- transformers==2.8.0
 - numpy==1.18.0
 - torch==1.6.0+cu101
+- (transformers==2.8.0, if you use BERT as an encoder)
 
 ## Setup
 Install [multigram](https://github.com/tatHi/multigram) and prepare OpTok repository.

@@ -3,18 +3,18 @@ Author's implementation of "[Optimizing Word Segmentation for Downstream Task](h
 In short, we call our system "OpTok: Optimizing Tokenization".
 
 ## Requirements
-- [multigram](https://github.com/tatHi/multigram)
+- [multigram v0.1](https://github.com/tatHi/multigram/tree/v0.1)
 - numpy==1.18.0
 - torch==1.6.0+cu101
 - (transformers==2.8.0, if you use BERT as an encoder)
 
 ## Setup
-Install [multigram](https://github.com/tatHi/multigram) and prepare OpTok repository.
+Install [multigram v0.1](https://github.com/tatHi/multigram/tree/v0.1) and prepare OpTok repository.
 
 ```
 $ mkdir optok_environment
 $ cd optok_environment
-$ git clone https://github.com/tatHi/multigram
+$ git clone https://github.com/tatHi/multigram -b v0.1
 $ git clone https://github.com/tatHi/optok
 $ cd multigram
 $ pip install --editable .

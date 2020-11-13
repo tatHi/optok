@@ -16,13 +16,18 @@ labels = torch.LongTensor(
 
 # initialize multigram lm
 mlm = lm.MultigramLM(
-        maxLength=5, minFreq=4, data=text, wordPiecePrefix=None, unkToken='<unk>'
+        maxLength=5, minFreq=4, data=text, unkToken='<unk>'
       )
 
-# if you have pretrained sentencepiece, initialize mlm without text and load the model as folliwing
+# if you have pretrained sentencepiece, initialize mlm without text and load the model as following
 # mlm = lm.MultigramLM()
 # mlm.loadSentencePieceModel('path/to/sentencepiece.model')
-       
+#
+# also, text should be preprocessed to use it in sentencepiece style:
+# import unicodedata
+# text = [unicodedata.normalize('NFKC', line) for line in data]
+# text = ['▁'+line.replace(' ', '▁') for line in data]
+      
 cl = classifier.Classifier(
        mlm=mlm,
        embedSize=3,

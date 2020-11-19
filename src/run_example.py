@@ -25,8 +25,8 @@ mlm = lm.MultigramLM(
 #
 # also, text should be preprocessed to use it in sentencepiece style:
 # import unicodedata
-# text = [unicodedata.normalize('NFKC', line) for line in data]
-# text = ['▁'+line.replace(' ', '▁') for line in data]
+# text = [unicodedata.normalize('NFKC', line) for line in text]
+# text = ['▁'+line.replace(' ', '▁') for line in text]
       
 cl = classifier.Classifier(
        mlm=mlm,

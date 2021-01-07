@@ -55,3 +55,7 @@ pieces: ['a', 'b', 'b', 'cd', 'e']
 ids   : [1, 2, 2, 4, 6]
 ------------------------------
 ```
+
+# Experimental Settings
+Training split of Amazon Dataset and Twitter(Ja) dataset used in the paper is available [here](https://drive.google.com/drive/folders/1MQRrKPFE53i8qP5m8gyypCl4cwV5Vkv8?usp=sharing).
+The google drive also includes pre-trained word embeddings and SentencePiece model for each experiments.

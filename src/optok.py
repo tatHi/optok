@@ -127,7 +127,7 @@ class OpTok(nn.Module):
             log_theta = self.nlm.getLogUnigramProbs(self.lmEmbed)
             log_smoothed_theta = lam * log_theta
             vocab = None
-        elif selectMode=='top':
+        elif selectMode in ['top', 'sampling']:
             log_theta, selectedIds = self.nlm.getSelectedLogUnigramProbs(
                                                     self.lmEmbed, 
                                                     self.topK, 
@@ -137,7 +137,7 @@ class OpTok(nn.Module):
             log_smoothed_theta = lam * log_theta
             vocab = set([self.mlm.id2word[i] for i in selectedIds])
         else:
-            print('selectMode should be top or normal.'); exit()
+            print('selectMode should be sampling, top, or normal.'); exit()
         
         # minf padding
         log_theta = F.pad(log_theta,
